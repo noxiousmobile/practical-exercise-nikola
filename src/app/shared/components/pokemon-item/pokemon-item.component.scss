@@ -1,0 +1,64 @@
+@use '../../../../styles/theme' as *;
+
+.pokemon-item {
+  display: flex;
+  flex-direction: column;
+
+ &__thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(
+      90deg,
+      #cfd1d8 0%,
+      #e2e4ea 50%,
+      #cfd1d8 100%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.2s infinite;
+  }
+
+  &__thumbnail--loaded {
+    background: $color-card;
+    animation: none;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  @keyframes skeleton-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  &__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    font-size: 0.95rem;
+  }
+
+   &__name {
+    color: $color-text-primary;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 150%;
+  }
+
+  &__id {
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 150%;
+  }
+}

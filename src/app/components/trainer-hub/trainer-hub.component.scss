@@ -1,0 +1,136 @@
+@use '../../../styles/theme' as *;
+
+$spacing-page-x: 32px;
+$spacing-page-x-mobile: 16px;
+$spacing-grid-column: 32px;
+$spacing-grid-row: 64px;
+
+$max-content-width: 1280px;
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: $color-bg;
+  color: $color-text-primary;
+  font-family: var(--font-primary);
+}
+
+.trainer-hub {
+  &__top {
+    background-color: $color-bg;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  &__main {
+    background-color: $color-bg-primary;
+    padding-block: 112px 80px;
+
+    @media (max-width: $brakepoint-mobile) {
+      padding-block: 32px 80px;
+    }
+  }
+
+  &__container {
+    max-width: $max-content-width;
+    margin-inline: auto;
+    padding-inline: 16px;
+    box-sizing: border-box;
+
+    @media (min-width: $max-content-width) {
+      padding-inline: 0;
+    }
+  }
+
+  &__title {
+    font-size: 4.2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 112px 0;
+    margin: 0 auto;
+    letter-spacing: -1px;
+    line-height: 120%;
+    color: $color-text-dark;
+
+    @media (max-width: $brakepoint-mobile) {
+      padding: 32px 0;
+      font-size: 2.2rem;
+    }
+  }
+
+  &__section {
+    color: $color-text-primary;
+  }
+
+  &__section-header {
+    margin-bottom: 80px;
+  }
+
+  &__section-title {
+    font-size: 3rem;
+    letter-spacing: -1px;
+    line-height: 120%;
+    font-weight: 500;
+    margin: 0 0 16px;
+
+    @media (max-width: $brakepoint-mobile) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__section-subtitle {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 150%;
+    color: $color-text-primary;
+
+    @media (max-width: $brakepoint-mobile) {
+      font-size: 1rem;
+    }
+  }
+
+  &__status {
+    margin-top: 32px;
+    font-size: 0.95rem;
+    color: $color-text-muted;
+  }
+
+  &__loader {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__spinner {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 3px solid $color-card;
+    border-top-color: $color-bg;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 32px;
+    row-gap: 64px;
+    margin-top: 48px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $brakepoint-mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

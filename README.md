@@ -88,3 +88,8 @@ Font sizes were not editable or showing the values (I did not had edit permissio
 
 ## Time spent
 3 hours
+
+### Testing
+There is one basic test currently added at e2e/test, which uses playwright e2e.
+It can be run with:
+`npx playwright test`

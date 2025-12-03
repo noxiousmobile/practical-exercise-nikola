@@ -32,7 +32,6 @@ export class PokemonService {
         })
       ),
       catchError((error) => {
-        console.error('Failed to load pokemon page', error);
         return throwError(() => new Error('Failed to load pokemons'));
       })
     );

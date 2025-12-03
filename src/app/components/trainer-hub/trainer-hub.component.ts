@@ -19,7 +19,7 @@ export class TrainerHubComponent {
   readonly error = signal<string | null>(null);
   readonly pageSize = signal(8);
   readonly offset = signal(0);
-  readonly chunkSize = 12;
+  readonly chunkSize = 8;
   readonly maxChunkSize = 100;
   readonly loadingInitial = signal<boolean>(true);
   readonly loadingMore = signal<boolean>(false);

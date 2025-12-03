@@ -14,26 +14,26 @@
           </p>
         </header>
 
-        @let isLoading = loading(); 
         @let errorMessage = error(); 
         @let pokemonData = pokemons(); 
 
         @if (errorMessage) {
-        <p class="trainer-hub__status">
-          {{ errorMessage }}
-        </p>
-        } @else { @defer (when !isLoading) {
+          <p class="trainer-hub__status">
+            {{ errorMessage }}
+          </p>
+        }
+       
         <div class="trainer-hub__grid">
           @for (pokemon of pokemonData; track pokemon.id) {
           <app-pokemon-item [pokemon]="pokemon" />
           }
         </div>
-        } @placeholder {
+        
         <div class="trainer-hub__loader">
           <div class="trainer-hub__spinner"></div>
           <p class="trainer-hub__status">Loading data...</p>
         </div>
-        } }
+
       </section>
     </div>
   </main>

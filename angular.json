@@ -91,6 +91,17 @@
               "src/styles.scss"
             ]
           }
+        },
+        "e2e": {
+          "builder": "playwright-ng-schematics:playwright",
+          "options": {
+            "devServerTarget": "angular-exercise-nikola:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular-exercise-nikola:serve:production"
+            }
+          }
         }
       }
     }
